@@ -11,29 +11,34 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A library for converting QR codes to SVG vector graphic code 
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Generate a SVG vector graphic code from a QR code (provided by the [qr package](https://pub.dev/packages/qr)).
+- Optionally set `colorA` and `colorB` for a gradient color.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+To start, import the dependency in your code:
 
 ```dart
-const like = 'sample';
+import 'package:qr_svg_generator/qr_svg_generator.dart';
 ```
 
-## Additional information
+To generate a SVG vector graphic code call `generateQrSvgImage`:
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+final qrSvgImageCode = generateQrSvgImage(
+  qrCode: myQrCode,
+  imageSizeInPx: 500,
+  title: "MySvg",
+  colorA: Colors.blue,
+  colorB: Colors.pink);
+```
+
+Now you can use the `toString()` method of your `qrSvgImage` instance to retrieve your SVG code for further use (e.g. safe to a .svg file):
+
+```dart
+saveTextFile(qrSvgImageCode.toString(), "mySvgFile.svg");
+```
