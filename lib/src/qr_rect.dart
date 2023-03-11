@@ -13,6 +13,6 @@ class QrRect {
 
   @override
   String toString() {
-    return '    <rect class="${qrColor.colorId}" x="$posX" y="$posY" width="$width" height="$height"/>';
+    return '    <rect style="${qrColor}" x="$posX" y="$posY" width="$width" height="$height"/>';
   }
 }
