@@ -8,8 +8,6 @@ class QrColor {
   @override
   String toString() {
     var hex = '#' + color.value.toRadixString(16).substring(2);
-    return '      .$colorId {\n'
-        '        fill: $hex;\n'
-        '      }\n';
+    return 'fill: $hex;';
   }
 }
