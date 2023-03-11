@@ -34,7 +34,7 @@ class QrSvgImage {
                 .join('\n');
     final rows = qrRows.map((e) => e.toString()).join('\n');
     final str =
-        '<svg id="mainLayer" xmlns="http://www.w3.org/2000/svg" width="$size" height="$size" viewBox="0 0 $size $size">\n'
+        '<svg id="mainLayer" xmlns="http://www.w3.org/2000/svg" width="$size" height="$size" viewBox="0 0 $size $size" xmlns:xlink="http://www.w3.org/1999/xlink">\n'
         '  <defs>\n'
         '  </defs>\n'
         '  <title>$title</title>\n'
